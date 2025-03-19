@@ -44,7 +44,6 @@ const render = function () {
     
   })
 
-  localStorage.setItem('Список дел', JSON.stringify(toDoData))
 }
 
 todoControl.addEventListener('submit', function (event) {
