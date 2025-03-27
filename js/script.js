@@ -43,22 +43,24 @@ const render = function () {
     })
     
   })
-
+ 
 }
 
 todoControl.addEventListener('submit', function (event) {
   event.preventDefault()
 
     const newToDo = {
-      text: headerInput.value,
+      text: headerInput.value.trim(),
       completed: false
     }
 
-    if (headerInput.value !== '') {
+    if (headerInput.value.trim() !== '') {
       toDoData.push(newToDo)
-      headerInput.value = ''
+      headerInput.value = '';
       localStorage.setItem("toDoData", JSON.stringify(toDoData));
       render();
     }
 
 });
+
+render();
